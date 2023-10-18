@@ -20,6 +20,7 @@ function SignIn({ visible, onClose }) {
         id="container"
         onClick={SignInOnClose}
         className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center"
+        style={{ zIndex: 999 }}
       >
         <div className="bg-white rounded-3xl">
           <button

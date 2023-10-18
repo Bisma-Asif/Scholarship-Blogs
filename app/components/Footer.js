@@ -4,19 +4,19 @@ function Footer() {
   return (
     <>
       <div className="bg-blue-900 h-1/2    ">
-        <div className="  lg:pl-52 w-10/12 md:pl-10 w-11/12 sm:pl-10 w-full ">
-          <h3 className=" text-white inline justify-center lg:text-3xl pr-20 md: text-2xl  ">
+        <div className="  lg:pl-52 lg:w-10/12 md:pl-10 ml-10 pr-8 pt-10  text-xl md:w-9/12  sm:pl-10 sm:w-full ">
+          <h3 className=" text-white justify-center  inline lg:text-3xl pr-20   ">
             Get scholarships and achieve your education goals.
           </h3>
           <button
             type="button"
-            className=" rounded-full w-1/5 my-24 bg-white  text-3xl leading-6 text-blue-900 shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 lg:w-1/5  sm:p-5 w-2/5 py-2 ml-2 mt-10  text-xl"
+            className=" rounded-full w-1/5 my-24 bg-white  text-3xl leading-6 text-blue-900 shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 lg:w-1/5  sm:p-5 px-4 w-3/5 py-2 ml-2 mt-10 text-xl"
           >
             Get Start
           </button>
           <hr className="border-b-4 border-dotted lg:w-11/12 sm:w-full" />
         </div>
-        <div className="grid gap-x-8 gap-y-4 lg:grid-cols-3 lg:pl-48 sm:grid-cols-1 justify-center">
+        <div className="grid gap-x-8 gap-y-4 lg:grid-cols-3 lg:pl-48 md:pl-20 sm:grid-cols-1 pl-10 ">
           <div className="p-5 ">
             <ul>
               <p className="text-gray-800 font-bold text-3xl pb-6">
