@@ -14,19 +14,21 @@ const navigation = [
   { name: "Contact", href: "#", current: false },
 ];
 
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
-function Navbar() {
-  const [showModal, setShowModal] = useState(false);
+function Navbar({showModal, setShowModal, showSignInModal, setSignInShowModal}) {
+
 
   const handleOnClose = () => setShowModal(false);
-
-  const [showSignInModal, setSignInShowModal] = useState(false);
-
   const SignInOnClose = () => setSignInShowModal(false);
+
+  
+
   return (
     <>
+    
       <Disclosure as="nav" className="bg-none">
         {({ open }) => (
           <>

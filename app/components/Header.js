@@ -14,7 +14,7 @@ const stats = [
   { name: "Paid time off", value: "Unlimited" },
 ];
 
-function Header() {
+function Header({showModal, setShowModal, showSignInModal, setSignInShowModal}) {
   return (
     <>
       <div className="relative isolate overflow-hidden bg-gray-900  mb-20">
@@ -47,7 +47,8 @@ function Header() {
             }}
           />
         </div>
-        <Navbar />
+      <Navbar showModal={showModal} setShowModal={setShowModal} showSignInModal={showSignInModal} setSignInShowModal={setSignInShowModal}/>
+
 
         <div className="mx-auto max-w-7xl py-24 px-6 lg:px-8">
           <div className="mx-auto max-w-3xl lg:mx-0">

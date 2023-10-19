@@ -28,7 +28,7 @@ function Card() {
           </div>
         </secction>
       </div> */}
-      <Slider />
+      
 
       {/* Card 2 start */}
       <div className="  mb-20 lg:px-40 ">

@@ -18,16 +18,17 @@ function SignUp({ visible, onClose }) {
       <div
         id="container"
         onClick={handleOnClose}
-        className="fixed inset-0  bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center"
+        className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center"
+        style={{ zIndex: 999}}
       >
-        <div className="bg-white p-2 rounded">
+        <div className="bg-white p-2 rounded-3xl">
           <button
             onClick={onClose}
             className="float-right p-5 rounded-full bg-grey-200  text-2xl"
           >
             X
           </button>
-          <div className="container mx-auto h-screen">
+          <div className="container mx-5">
             <div className="flex justify-center lg:px-6 my-12">
               {/* Row */}
               <div className="w-full md:w-3/4 lg:w-11/12 flex">

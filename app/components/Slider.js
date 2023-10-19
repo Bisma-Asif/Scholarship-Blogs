@@ -10,7 +10,7 @@ register();
 
 SwiperCore.use([Autoplay]);
 
-function Slider() {
+function Slider({showModal, showSignInModal}) {
   const swiperRef = useRef(null);
 
   useEffect(() => {
@@ -27,10 +27,11 @@ function Slider() {
     Object.assign(swiperContainer, params);
     swiperContainer.initialize();
   }, []);
+
   return (
     <>
-      <swiper-container ref={swiperRef} init="false" className="relative z-0">
-        <swiper-slide class="relative z-0">
+      <swiper-container ref={swiperRef} init="false" className="relative" style={{zIndex:(showModal||showSignInModal)&&"-1"}}>
+        <swiper-slide class="relative">
           <div className="  mb-20 lg:px-40 ">
             <section className="justify-center">
               {" "}
