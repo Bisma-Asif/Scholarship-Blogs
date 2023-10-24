@@ -1,16 +1,16 @@
 "use client";
 import React from "react";
-// import SwiperCore, { Autoplay, Navigation } from "swiper/core";
+import SwiperCore, { Autoplay } from "swiper/core";
 // import "swiper/css"; // Import the Swiper CSS
 // import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Autoplay } from "swiper/core";
+//
 import { useEffect, useRef } from "react";
 import { register } from "swiper/element/bundle";
 register();
 
 SwiperCore.use([Autoplay]);
 
-function Slider() {
+function Slider({ showModal, showSignInModal }) {
   const swiperRef = useRef(null);
 
   useEffect(() => {
@@ -27,10 +27,16 @@ function Slider() {
     Object.assign(swiperContainer, params);
     swiperContainer.initialize();
   }, []);
+
   return (
     <>
-      <swiper-container ref={swiperRef} init="false" className="relative z-0">
-        <swiper-slide class="relative z-0">
+      <swiper-container
+        ref={swiperRef}
+        init="false"
+        className="relative"
+        style={{ zIndex: (showModal || showSignInModal) && "-1" }}
+      >
+        <swiper-slide class="relative">
           <div className="  mb-20 lg:px-40 ">
             <section className="justify-center">
               {" "}

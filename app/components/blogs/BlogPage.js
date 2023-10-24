@@ -20,67 +20,189 @@ const sortOptions = [
 ];
 const subCategories = [
   {
-    id: "Argriculture ",
-    name: "Agriculture",
+    id: "Argriculture & Forestry ",
+    name: "Agriculture & Forestry",
     options: [
       {
-        value: "Agriculture & Forestry",
-        label: "Agriculture & Forestry",
+        value: "Agriculture",
+        label: "Agriculture",
         href: "#",
       },
       {
-        value: "Applied Science & Professions",
-        label: "Applied Science & Professions",
+        value: "Animal Science",
+        label: "Animal Science",
         href: "#",
       },
       {
-        value: "Arts , Design & Architecture",
-        label: "Arts , Design & Architecture",
+        value: "Food Technology",
+        label: "Foood Technology",
         href: "#",
       },
       {
-        value: "Business & Management",
-        label: "Business & Management",
+        value: "Horticulture and Crop Science",
+        label: "Horticulture and Crop Science",
         href: "#",
         href: "#",
       },
       {
-        value: "Computer Science & IT",
-        label: "Computer Science & IT",
+        value: "Marine Science",
+        label: "Marine Science",
         href: "#",
         href: "#",
       },
     ],
   },
   {
-    id: "IT",
-    name: "IT",
+    id: "Applied Sciences & Professions",
+    name: "Applied Sciences & Professions",
     options: [
       {
-        value: "Agriculture & Forestry",
-        label: "Agriculture & Forestry",
+        value: "Aviation Studies",
+        label: "Aviation Studies",
         href: "#",
       },
       {
-        value: "Applied Science & Professions",
-        label: "Applied Science & Professions",
+        value: "Emergency & Disaster Management",
+        label: "Emergency & Disaster Management",
         href: "#",
       },
       {
-        value: "Arts , Design & Architecture",
-        label: "Arts , Design & Architecture",
+        value: "Family & Consumer Science",
+        label: "Family & Consumer Science",
         href: "#",
       },
       {
-        value: "Business & Management",
-        label: "Business & Management",
+        value: "Fashion, Textiles and Luxury Goods",
+        label: "Fashion, Textiles and Luxury Goods",
+        href: "#",
+      },
+      {
+        value: "Food Science",
+        label: "Food Science",
+        href: "#",
+      },
+      {
+        value: "Forencsic Science",
+        label: "Forensic Science",
+        href: "#",
+      },
+      {
+        value: "library Science",
+        label: "library Science",
+        href: "#",
+      },
+      {
+        value: "Military Science",
+        label: "Militry Science",
         href: "#",
         href: "#",
       },
       {
-        value: "Computer Science & IT",
-        label: "Computer Science & IT",
+        value: "Museum Studies",
+        label: "Museum Studies",
         href: "#",
+      },
+    ],
+  },
+  {
+    id: "Applied Sciences & Professions",
+    name: "Applied Sciences & Professions",
+    options: [
+      {
+        value: "Aviation Studies",
+        label: "Aviation Studies",
+        href: "#",
+      },
+      {
+        value: "Emergency & Disaster Management",
+        label: "Emergency & Disaster Management",
+        href: "#",
+      },
+      {
+        value: "Family & Consumer Science",
+        label: "Family & Consumer Science",
+        href: "#",
+      },
+      {
+        value: "Fashion, Textiles and Luxury Goods",
+        label: "Fashion, Textiles and Luxury Goods",
+        href: "#",
+      },
+      {
+        value: "Food Science",
+        label: "Food Science",
+        href: "#",
+      },
+      {
+        value: "Forencsic Science",
+        label: "Forensic Science",
+        href: "#",
+      },
+      {
+        value: "library Science",
+        label: "library Science",
+        href: "#",
+      },
+      {
+        value: "Military Science",
+        label: "Militry Science",
+        href: "#",
+        href: "#",
+      },
+      {
+        value: "Museum Studies",
+        label: "Museum Studies",
+        href: "#",
+      },
+    ],
+  },
+  {
+    id: "Arts Science",
+    name: "Applied Sciences & Professions",
+    options: [
+      {
+        value: "Aviation Studies",
+        label: "Aviation Studies",
+        href: "#",
+      },
+      {
+        value: "Emergency & Disaster Management",
+        label: "Emergency & Disaster Management",
+        href: "#",
+      },
+      {
+        value: "Family & Consumer Science",
+        label: "Family & Consumer Science",
+        href: "#",
+      },
+      {
+        value: "Fashion, Textiles and Luxury Goods",
+        label: "Fashion, Textiles and Luxury Goods",
+        href: "#",
+      },
+      {
+        value: "Food Science",
+        label: "Food Science",
+        href: "#",
+      },
+      {
+        value: "Forencsic Science",
+        label: "Forensic Science",
+        href: "#",
+      },
+      {
+        value: "library Science",
+        label: "library Science",
+        href: "#",
+      },
+      {
+        value: "Military Science",
+        label: "Militry Science",
+        href: "#",
+      },
+      {
+        value: "Museum Studies",
+        label: "Museum Studies",
         href: "#",
       },
     ],
@@ -130,6 +252,10 @@ function classNames(...classes) {
 
 export default function Example() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+
+  const [showSignInModal, setSignInShowModal] = useState(false);
+
+  const SignInOnClose = () => setSignInShowModal(false);
 
   return (
     <div className="bg-white">
@@ -312,8 +438,19 @@ export default function Example() {
                     <ChevronDownIcon
                       className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
+                      
                     />
-                  </Menu.Button>
+                    </Menu.Button>
+                     <button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
+                    Filter
+                    <FunnelIcon
+                      className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                      aria-hidden="true"
+                     
+                    />
+                    
+                  </button>
+                 
                 </div>
 
                 <Transition

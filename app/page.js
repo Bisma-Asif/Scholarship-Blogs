@@ -5,19 +5,20 @@ import SignUp from "./components/SignUp";
 import Slider from "./components/Slider";
 import UserDashboard from "./components/UserDashboard";
 import SignIn from "./components/SignIn";
-import BlogPage from "./components/BlogPage";
+import BlogPage from "./components/blogs/BlogPage";
+import Blog from "./components/blogs/Blog";
 
 export default function Home() {
   return (
     <>
-      <Header />
+      {/* <Header />
       <Card />
       <Footer />
-      <Slider />
       <SignIn />
-      <SignUp />
+      <SignUp /> */}
       {/* <BlogPage /> */}
-      {/* <UserDashboard /> */}
+      <Blog />
+      {/* <UserDashboard />  */}
     </>
   );
 }
