@@ -11,13 +11,16 @@ import Blog from "./components/blogs/Blog";
 export default function Home() {
   return (
     <>
+      <div>
+        <Blog />
+      </div>
       {/* <Header />
       <Card />
       <Footer />
       <SignIn />
       <SignUp /> */}
       {/* <BlogPage /> */}
-      <Blog />
+
       {/* <UserDashboard />  */}
     </>
   );

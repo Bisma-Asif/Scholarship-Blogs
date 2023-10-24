@@ -58,7 +58,9 @@ function BlogTabs() {
           );
         })}
       </div>
-      <div className="text-gray-700 sm:items-center">{tabsData[activeTabIndex].content}</div>
+      <div className="text-gray-700 md:items-center">
+        {tabsData[activeTabIndex].content}
+      </div>
     </div>
   );
 }

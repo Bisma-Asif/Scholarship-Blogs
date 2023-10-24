@@ -9,7 +9,7 @@ function Blog() {
   return (
     <>
       <div>
-        <div className="flex  lg:flex-nowrap sm:flex-wrap">
+        <div className=" container 2xl (1536px) flex  lg:flex-nowrap sm:flex-wrap">
           <div className="w-3/5">
             <BlogTabs />
             <TrendingBlogs />
