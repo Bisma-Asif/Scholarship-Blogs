@@ -28,7 +28,7 @@ function BlogAdd() {
   return (
     <>
       <div>
-        <div className="grid grid-cols-1 lg:px-20 py-20  sm:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-6 lg:w-full sm:w-9/12 sm:px-5 sm:py-10">
+        <div className="grid grid-cols-1 lg:px-20 py-20  sm:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-6 lg:w-full md:w-96 ">
           {data.map((item, index) => (
             <div
               key={index}

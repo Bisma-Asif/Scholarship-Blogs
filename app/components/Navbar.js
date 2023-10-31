@@ -5,10 +5,12 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import SignUp from "./SignUp";
 import SignIn from "./SignIn";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const navigation = [
   { name: "Home", href: "#", current: true },
-  { name: "Blogs", href: "#", current: false },
+  { name: "Blogs", href: "", current: false },
   { name: "Scholarship", href: "#", current: false },
   { name: "About", href: "#", current: false },
   { name: "Contact", href: "#", current: false },
@@ -18,6 +20,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 function Navbar() {
+  const router = useRouter();
   const [showModal, setShowModal] = useState(false);
 
   const handleOnClose = () => setShowModal(false);
@@ -30,7 +33,7 @@ function Navbar() {
       <Disclosure as="nav" className="bg-none">
         {({ open }) => (
           <>
-            <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-full px-2 sm:px-6 lg:px-8 bg-gray-900">
               <div className="relative flex h-16 items-center justify-between">
                 <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                   {/* Mobile menu button*/}
@@ -60,6 +63,11 @@ function Navbar() {
                         <a
                           key={item.name}
                           href={item.href}
+                          onClick={
+                            item.name === "Blogs"
+                              ? () => router.push("/blogs")
+                              : undefined
+                          }
                           className={classNames(
                             item.current ? "text-white" : "text-white",
                             "rounded-md px-3 py-2 text-lg font-medium"

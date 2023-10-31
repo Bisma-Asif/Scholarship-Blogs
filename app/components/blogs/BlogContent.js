@@ -3,11 +3,11 @@ import SideBlogsCards from "./SideBlogsCards";
 function BlogContent() {
   return (
     <>
-      <div className="flex lg:flex-nowrap md:flex-wrap">
-        <div className="w-2/4 ">
+      <div className="grid lg:grid-cols-2 sm:grid-cols-1">
+        <div className="lg:w-96 mr-10 sm:w-full">
           <BlogCarousel />
         </div>
-        <div className="w-4/5">
+        <div className="">
           <SideBlogsCards />
         </div>
       </div>

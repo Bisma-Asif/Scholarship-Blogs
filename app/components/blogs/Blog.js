@@ -9,12 +9,12 @@ function Blog() {
   return (
     <>
       <div>
-        <div className=" container 2xl (1536px) flex  lg:flex-nowrap sm:flex-wrap">
-          <div className="w-3/5">
+        <div className="grid lg:grid-cols-3 space-x-2 sm:grid-cols-1">
+          <div className="w-full col-span-2 ">
             <BlogTabs />
             <TrendingBlogs />
           </div>
-          <div className=" w-2/4 sm:w-8/12">
+          <div className="w-4/5">
             <About />
           </div>
         </div>

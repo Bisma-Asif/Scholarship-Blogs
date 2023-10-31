@@ -1,6 +1,5 @@
 "use client";
-import { Fragment, useState } from "react";
-import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
+import React, { Fragment, useState, useEffect } from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import {
   ChevronDownIcon,
@@ -10,6 +9,8 @@ import {
   PlusIcon,
   Squares2X2Icon,
 } from "@heroicons/react/20/solid";
+import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
+import PopupFilter from "./filter/PopupFilter";
 
 const sortOptions = [
   { name: "Most Popular", href: "#", current: true },
@@ -18,231 +19,48 @@ const sortOptions = [
   { name: "Price: Low to High", href: "#", current: false },
   { name: "Price: High to Low", href: "#", current: false },
 ];
-const subCategories = [
+
+const data = [
   {
-    id: "Argriculture & Forestry ",
-    name: "Agriculture & Forestry",
-    options: [
-      {
-        value: "Agriculture",
-        label: "Agriculture",
-        href: "#",
-      },
-      {
-        value: "Animal Science",
-        label: "Animal Science",
-        href: "#",
-      },
-      {
-        value: "Food Technology",
-        label: "Foood Technology",
-        href: "#",
-      },
-      {
-        value: "Horticulture and Crop Science",
-        label: "Horticulture and Crop Science",
-        href: "#",
-        href: "#",
-      },
-      {
-        value: "Marine Science",
-        label: "Marine Science",
-        href: "#",
-        href: "#",
-      },
-    ],
+    title: "Scholarsip of Bachelor Program in Mathematics",
+    description:
+      "The best-kept secret of The Bahamas is the country’s sheer size and diversity. With 16 major islands, The Bahamas is an unmatched destination.The Best Scholarsip of Bachelor Program in Mathematics at Uk ",
+    rating: 3.96,
+    reviews: 76,
+    imageSrc:
+      "https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    superhost: true,
   },
   {
-    id: "Applied Sciences & Professions",
-    name: "Applied Sciences & Professions",
-    options: [
-      {
-        value: "Aviation Studies",
-        label: "Aviation Studies",
-        href: "#",
-      },
-      {
-        value: "Emergency & Disaster Management",
-        label: "Emergency & Disaster Management",
-        href: "#",
-      },
-      {
-        value: "Family & Consumer Science",
-        label: "Family & Consumer Science",
-        href: "#",
-      },
-      {
-        value: "Fashion, Textiles and Luxury Goods",
-        label: "Fashion, Textiles and Luxury Goods",
-        href: "#",
-      },
-      {
-        value: "Food Science",
-        label: "Food Science",
-        href: "#",
-      },
-      {
-        value: "Forencsic Science",
-        label: "Forensic Science",
-        href: "#",
-      },
-      {
-        value: "library Science",
-        label: "library Science",
-        href: "#",
-      },
-      {
-        value: "Military Science",
-        label: "Militry Science",
-        href: "#",
-        href: "#",
-      },
-      {
-        value: "Museum Studies",
-        label: "Museum Studies",
-        href: "#",
-      },
-    ],
+    title: "Scholarship of Masters Program in Computer Science",
+    description:
+      "The best-kept secret of The Bahamas is the country’s sheer size and diversity. With 16 major islands, The Bahamas is an unmatched destination.The best Scholarsip of Masters Program in computer science",
+    rating: 4.96,
+    reviews: 76,
+    imageSrc:
+      "https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    superhost: true,
   },
   {
-    id: "Applied Sciences & Professions",
-    name: "Applied Sciences & Professions",
-    options: [
-      {
-        value: "Aviation Studies",
-        label: "Aviation Studies",
-        href: "#",
-      },
-      {
-        value: "Emergency & Disaster Management",
-        label: "Emergency & Disaster Management",
-        href: "#",
-      },
-      {
-        value: "Family & Consumer Science",
-        label: "Family & Consumer Science",
-        href: "#",
-      },
-      {
-        value: "Fashion, Textiles and Luxury Goods",
-        label: "Fashion, Textiles and Luxury Goods",
-        href: "#",
-      },
-      {
-        value: "Food Science",
-        label: "Food Science",
-        href: "#",
-      },
-      {
-        value: "Forencsic Science",
-        label: "Forensic Science",
-        href: "#",
-      },
-      {
-        value: "library Science",
-        label: "library Science",
-        href: "#",
-      },
-      {
-        value: "Military Science",
-        label: "Militry Science",
-        href: "#",
-        href: "#",
-      },
-      {
-        value: "Museum Studies",
-        label: "Museum Studies",
-        href: "#",
-      },
-    ],
+    title: "Scholarsip of Bachelor Program in Medical Science",
+    description:
+      "The best-kept secret of The Bahamas is the country’s sheer size and diversity. With 16 major islands, The Bahamas is an unmatched destination.The best Scholarsip of Bachelor Program in Medical at different Countries",
+
+    rating: 4.75,
+    reviews: 76,
+    imageSrc:
+      "https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    superhost: true,
   },
   {
-    id: "Arts Science",
-    name: "Applied Sciences & Professions",
-    options: [
-      {
-        value: "Aviation Studies",
-        label: "Aviation Studies",
-        href: "#",
-      },
-      {
-        value: "Emergency & Disaster Management",
-        label: "Emergency & Disaster Management",
-        href: "#",
-      },
-      {
-        value: "Family & Consumer Science",
-        label: "Family & Consumer Science",
-        href: "#",
-      },
-      {
-        value: "Fashion, Textiles and Luxury Goods",
-        label: "Fashion, Textiles and Luxury Goods",
-        href: "#",
-      },
-      {
-        value: "Food Science",
-        label: "Food Science",
-        href: "#",
-      },
-      {
-        value: "Forencsic Science",
-        label: "Forensic Science",
-        href: "#",
-      },
-      {
-        value: "library Science",
-        label: "library Science",
-        href: "#",
-      },
-      {
-        value: "Military Science",
-        label: "Militry Science",
-        href: "#",
-      },
-      {
-        value: "Museum Studies",
-        label: "Museum Studies",
-        href: "#",
-      },
-    ],
-  },
-];
-const filters = [
-  {
-    id: "color",
-    name: "Color",
-    options: [
-      { value: "white", label: "White", checked: false },
-      { value: "beige", label: "Beige", checked: false },
-      { value: "blue", label: "Blue", checked: true },
-      { value: "brown", label: "Brown", checked: false },
-      { value: "green", label: "Green", checked: false },
-      { value: "purple", label: "Purple", checked: false },
-    ],
-  },
-  {
-    id: "category",
-    name: "Category",
-    options: [
-      { value: "new-arrivals", label: "New Arrivals", checked: false },
-      { value: "sale", label: "Sale", checked: false },
-      { value: "travel", label: "Travel", checked: true },
-      { value: "organization", label: "Organization", checked: false },
-      { value: "accessories", label: "Accessories", checked: false },
-    ],
-  },
-  {
-    id: "size",
-    name: "Size",
-    options: [
-      { value: "2l", label: "2L", checked: false },
-      { value: "6l", label: "6L", checked: false },
-      { value: "12l", label: "12L", checked: false },
-      { value: "18l", label: "18L", checked: false },
-      { value: "20l", label: "20L", checked: false },
-      { value: "40l", label: "40L", checked: true },
-    ],
+    title: "Scholarsip of Bachelor Program in Business",
+    description:
+      "The best-kept secret of The Bahamas is the country’s sheer size and diversity. With 16 major islands, The Bahamas is an unmatched destination.The Best Scholarsip of Bachelor Program in Business",
+    rating: 3.86,
+    reviews: 76,
+    imageSrc:
+      "https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    superhost: true,
   },
 ];
 
@@ -257,138 +75,31 @@ export default function Example() {
 
   const SignInOnClose = () => setSignInShowModal(false);
 
+  const [showPopupModal, setPopupShowModal] = useState(false);
+
+  const PopupOnClose = () => setPopupShowModal(false);
+
+  const [selectedFilters, setSelectedFilters] = useState([]);
+  const [filteredItems, setFilteredItems] = useState(data);
+
+  const handleFilter = (selectedCategory) => {
+    const filteredItems = data.filter((item) => {
+      // Modify the following condition according to your data structure
+      return item.category === selectedCategory;
+    });
+
+    setSelectedFilters([selectedCategory]);
+    setFilteredData(filteredItems);
+  };
+
   return (
-    <div className="bg-white">
+    <div className="bg-white  lg:px-20">
       <div>
-        {/* Mobile filter dialog */}
-        <Transition.Root show={mobileFiltersOpen} as={Fragment}>
-          <Dialog
-            as="div"
-            className="relative z-40 lg:hidden"
-            onClose={setMobileFiltersOpen}
-          >
-            <Transition.Child
-              as={Fragment}
-              enter="transition-opacity ease-linear duration-300"
-              enterFrom="opacity-0"
-              enterTo="opacity-100"
-              leave="transition-opacity ease-linear duration-300"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0"
-            >
-              <div className="fixed inset-0 bg-black bg-opacity-25" />
-            </Transition.Child>
-
-            <div className="fixed inset-0 z-40 flex">
-              <Transition.Child
-                as={Fragment}
-                enter="transition ease-in-out duration-300 transform"
-                enterFrom="translate-x-full"
-                enterTo="translate-x-0"
-                leave="transition ease-in-out duration-300 transform"
-                leaveFrom="translate-x-0"
-                leaveTo="translate-x-full"
-              >
-                <Dialog.Panel className="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-12 shadow-xl">
-                  <div className="flex items-center justify-between px-4">
-                    <h2 className="text-lg font-medium text-gray-900">
-                      Filters
-                    </h2>
-                    <button
-                      type="button"
-                      className="-mr-2 flex h-10 w-10 items-center justify-center rounded-md bg-white p-2 text-gray-400"
-                      onClick={() => setMobileFiltersOpen(false)}
-                    >
-                      <span className="sr-only">Close menu</span>
-                      <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                    </button>
-                  </div>
-
-                  {/* Filters */}
-                  <form className="mt-4 border-t border-gray-200">
-                    <h3 className="sr-only">Categories</h3>
-                    <ul
-                      role="list"
-                      className="px-2 py-3 font-medium text-gray-900"
-                    >
-                      {subCategories.map((category) => (
-                        <li key={category.name}>
-                          <a href={category.href} className="block px-2 py-3">
-                            {category.name}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-
-                    {filters.map((section) => (
-                      <Disclosure
-                        as="div"
-                        key={section.id}
-                        className="border-t border-gray-200 px-4 py-6"
-                      >
-                        {({ open }) => (
-                          <>
-                            <h3 className="-mx-2 -my-3 flow-root">
-                              <Disclosure.Button className="flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400 hover:text-gray-500">
-                                <span className="font-medium text-gray-900">
-                                  {section.name}
-                                </span>
-                                <span className="ml-6 flex items-center">
-                                  {open ? (
-                                    <MinusIcon
-                                      className="h-5 w-5"
-                                      aria-hidden="true"
-                                    />
-                                  ) : (
-                                    <PlusIcon
-                                      className="h-5 w-5"
-                                      aria-hidden="true"
-                                    />
-                                  )}
-                                </span>
-                              </Disclosure.Button>
-                            </h3>
-                            <Disclosure.Panel className="pt-6">
-                              <div className="space-y-6">
-                                {section.options.map((option, optionIdx) => (
-                                  <div
-                                    key={option.value}
-                                    className="flex items-center"
-                                  >
-                                    <input
-                                      id={`filter-mobile-${section.id}-${optionIdx}`}
-                                      name={`${section.id}[]`}
-                                      defaultValue={option.value}
-                                      type="checkbox"
-                                      defaultChecked={option.checked}
-                                      className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                    />
-                                    <label
-                                      htmlFor={`filter-mobile-${section.id}-${optionIdx}`}
-                                      className="ml-3 min-w-0 flex-1 text-gray-500"
-                                    >
-                                      {option.label}
-                                    </label>
-                                  </div>
-                                ))}
-                              </div>
-                            </Disclosure.Panel>
-                          </>
-                        )}
-                      </Disclosure>
-                    ))}
-                  </form>
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
-          </Dialog>
-        </Transition.Root>
-
         <main className="mx-auto max-w-full px-4 sm:px-6 lg:px-8">
-          <form className="">
+          <form className="justify-center lg:ml-80 md:ml-10">
             <label
               htmlFor="default-search"
-              className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+              className="mb-2 text-xl font-medium text-gray-900 sr-only dark:text-white"
             >
               Search
             </label>
@@ -413,16 +124,16 @@ export default function Example() {
               <input
                 type="search"
                 id="default-search"
-                className="block w-3/5 p-4 pl-10 mt-10 text-sm text-gray-900 border border-gray-300 rounded-3xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-3/5 p-4 pl-10 mt-10 text-sm justify-center text-gray-900 border border-gray-300 rounded-3xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Search Blogs..."
                 required
               />
-              <button
+              {/* <button
                 type="submit"
-                className="text-white absolute right-1.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="text-white absolute -right-1.5 mr-40 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 Search
-              </button>
+              </button> */}
             </div>
           </form>
           <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
@@ -433,24 +144,27 @@ export default function Example() {
             <div className="flex items-center">
               <Menu as="div" className="relative inline-block text-left">
                 <div>
-                  <Menu.Button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
+                  <Menu.Button className="group inline-flex mr-5 justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
                     Sort
                     <ChevronDownIcon
                       className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
-                      
                     />
-                    </Menu.Button>
-                     <button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
+                  </Menu.Button>
+                  <button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
                     Filter
                     <FunnelIcon
+                      onClick={() => setPopupShowModal(true)}
                       className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
-                     
                     />
-                    
                   </button>
-                 
+                  <PopupFilter
+                    onClose={() => setPopupShowModal(false)}
+                    visible={showPopupModal}
+                    selectedFilters={selectedFilters}
+                    handleFilter={handleFilter} // Pass the handleFilter function
+                  />
                 </div>
 
                 <Transition
@@ -494,14 +208,6 @@ export default function Example() {
                 <span className="sr-only">View grid</span>
                 <Squares2X2Icon className="h-5 w-5" aria-hidden="true" />
               </button>
-              <button
-                type="button"
-                className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"
-                onClick={() => setMobileFiltersOpen(true)}
-              >
-                <span className="sr-only">Filters</span>
-                <FunnelIcon className="h-5 w-5" aria-hidden="true" />
-              </button>
             </div>
           </div>
 
@@ -510,262 +216,67 @@ export default function Example() {
               Products
             </h2>
 
-            <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
+            <div className="">
               {/* Filters */}
-
-              <form className="hidden lg:block">
-                <h3 className="sr-only">Categories</h3>
-
-                {subCategories.map((section) => (
-                  <Disclosure
-                    as="div"
-                    key={section.id}
-                    className="border-b border-gray-200 py-6"
-                  >
-                    {({ open }) => (
-                      <>
-                        <h3 className="-my-3 flow-root">
-                          <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
-                            <span className="font-medium text-gray-900">
-                              {section.name}
-                            </span>
-                          </Disclosure.Button>
-                        </h3>
-                        <Disclosure.Panel className="pt-6">
-                          <div className="space-y-4">
-                            {section.options.map((option, optionIdx) => (
-                              <div
-                                key={option.value}
-                                className="flex items-center"
-                              >
-                                <input
-                                  id={`subCategories-${section.id}-${optionIdx}`}
-                                  name={`${section.id}[]`}
-                                  defaultValue={option.value}
-                                  type="checkbox"
-                                  defaultChecked={option.checked}
-                                  className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                />
-                                <label
-                                  htmlFor={`subCategories-${section.id}-${optionIdx}`}
-                                  className="ml-3 text-sm text-gray-600"
-                                >
-                                  {option.label}
-                                </label>
-                              </div>
-                            ))}
-                          </div>
-                        </Disclosure.Panel>
-                      </>
-                    )}
-                  </Disclosure>
-                ))}
-                {filters.map((section) => (
-                  <Disclosure
-                    as="div"
-                    key={section.id}
-                    className="border-b border-gray-200 py-6"
-                  >
-                    {({ open }) => (
-                      <>
-                        <h3 className="-my-3 flow-root">
-                          <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
-                            <span className="font-medium text-gray-900">
-                              {section.name}
-                            </span>
-                            <span className="ml-6 flex items-center">
-                              {open ? (
-                                <ChevronUpIcon
-                                  className="h-5 w-5"
-                                  aria-hidden="true"
-                                />
-                              ) : (
-                                <ChevronDownIcon
-                                  className="h-5 w-5"
-                                  aria-hidden="true"
-                                />
-                              )}
-                            </span>
-                          </Disclosure.Button>
-                        </h3>
-                        <Disclosure.Panel className="pt-6">
-                          <div className="space-y-4">
-                            {section.options.map((option, optionIdx) => (
-                              <div
-                                key={option.value}
-                                className="flex items-center"
-                              >
-                                <input
-                                  id={`filter-${section.id}-${optionIdx}`}
-                                  name={`${section.id}[]`}
-                                  defaultValue={option.value}
-                                  type="checkbox"
-                                  defaultChecked={option.checked}
-                                  className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                />
-                                <label
-                                  htmlFor={`filter-${section.id}-${optionIdx}`}
-                                  className="ml-3 text-sm text-gray-600"
-                                >
-                                  {option.label}
-                                </label>
-                              </div>
-                            ))}
-                          </div>
-                        </Disclosure.Panel>
-                      </>
-                    )}
-                  </Disclosure>
-                ))}
-              </form>
 
               {/* Product grid */}
               <div className="lg:col-span-3">
                 {/* Your content */}
-                <div className="p-10">
-                  {/*Card 1*/}
-                  <div className=" w-full lg:max-w-full lg:flex">
-                    <div
-                      className="h-48 lg:h-auto lg:w-52 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-                      style={{
-                        backgroundImage:
-                          'url("https://img.freepik.com/free-photo/young-students-learning-together-during-group-study_23-2149211066.jpg")',
-                      }}
-                      title="Mountain"
-                    ></div>
-                    <div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-                      <div className="mb-8">
-                        <p className="text-sm text-gray-600 flex items-center">
-                          <svg
-                            className="fill-current text-gray-500 w-3 h-3 mr-2"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                          >
-                            <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-                          </svg>
-                          Members only
-                        </p>
-                        <div className="text-gray-900 font-bold text-xl mb-2">
-                          Best Mountain Trails 2020
+                <div className="flex flex-col  mt-20 relative bg-white ">
+                  <div className="max-w-8xl ">
+                    {data.map((card, index) => (
+                      <div
+                        key={index}
+                        className=" flex flex-col  mb-40 md:flex-row sm:space-x-5 space-y-5 md:space-y-0 rounded-xl shadow-lg p-3 border border-grey-100 bg-grey my-4 sm:mx-5"
+                      >
+                        <div className=" w-52 rounded-xl sm:w-1/3 bg-white grid place-items-center">
+                          <img
+                            src={card.imageSrc}
+                            alt="Card"
+                            className="rounded-xl w-80 py-10  lg:-ml-56 "
+                          />
                         </div>
-                        <p className="text-gray-700 text-base">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Voluptatibus quia, Nonea! Maiores et perferendis
-                          eaque, exercitationem praesentium nihil.
-                        </p>
-                      </div>
-                      <div className="flex items-center">
-                        <img
-                          className="w-10 h-10 rounded-full mr-4"
-                          src="/ben.png"
-                          alt="Avatar of Writer"
-                        />
-                        <div className="text-sm">
-                          <p className="text-gray-900 leading-none">
-                            John Smith
+                        <div className="w-full  md:w-2/3 bg-grey-200 flex flex-col space-y-2 p-3 pr-10">
+                          <div className="flex lg:my-10 justify-between item-center">
+                            <p className="text-gray-500 font-medium hidden md:block text-xl">
+                              Vacations
+                            </p>
+                            <div className="flex items-center">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-5 w-5 text-yellow-500"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                              >
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                              </svg>
+                              <p className="text-gray-600 font-bold text-xl ml-1">
+                                {card.rating}
+                                <span className="text-gray-500 font-normal">
+                                  ({card.reviews} reviews)
+                                </span>
+                              </p>
+                            </div>
+                            {card.superhost && (
+                              <div className="bg-gray-200 px-3 py-1 rounded-full text-lg font-medium text-gray-800 hidden md:block">
+                                Superhost
+                              </div>
+                            )}
+                          </div>
+                          <h3 className="font-black text-gray-800 md:text-4xl text-xl">
+                            {card.title}
+                          </h3>
+                          <p className=" text-gray-500 lg:text-2xl md:text-lg">
+                            {card.description}
                           </p>
-                          <p className="text-gray-600">Aug 18</p>
                         </div>
                       </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
-                <div className="p-10">
-                  {/*Card 1*/}
-                  <div className=" w-full lg:max-w-full lg:flex">
-                    <div
-                      className="h-48 lg:h-auto lg:w-52 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-                      style={{
-                        backgroundImage:
-                          'url("https://img.freepik.com/free-photo/young-students-learning-together-during-group-study_23-2149211066.jpg")',
-                      }}
-                      title="Mountain"
-                    ></div>
-                    <div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-                      <div className="mb-8">
-                        <p className="text-sm text-gray-600 flex items-center">
-                          <svg
-                            className="fill-current text-gray-500 w-3 h-3 mr-2"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                          >
-                            <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-                          </svg>
-                          Members only
-                        </p>
-                        <div className="text-gray-900 font-bold text-xl mb-2">
-                          Best Mountain Trails 2020
-                        </div>
-                        <p className="text-gray-700 text-base">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Voluptatibus quia, Nonea! Maiores et perferendis
-                          eaque, exercitationem praesentium nihil.
-                        </p>
-                      </div>
-                      <div className="flex items-center">
-                        <img
-                          className="w-10 h-10 rounded-full mr-4"
-                          src="/ben.png"
-                          alt="Avatar of Writer"
-                        />
-                        <div className="text-sm">
-                          <p className="text-gray-900 leading-none">
-                            John Smith
-                          </p>
-                          <p className="text-gray-600">Aug 18</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="p-10">
-                  {/*Card 1*/}
-                  <div className=" w-full lg:max-w-full lg:flex">
-                    <div
-                      className="h-48 lg:h-auto lg:w-52 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-                      style={{
-                        backgroundImage:
-                          'url("https://img.freepik.com/free-photo/young-students-learning-together-during-group-study_23-2149211066.jpg")',
-                      }}
-                      title="Mountain"
-                    ></div>
-                    <div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-                      <div className="mb-8">
-                        <p className="text-sm text-gray-600 flex items-center">
-                          <svg
-                            className="fill-current text-gray-500 w-3 h-3 mr-2"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                          >
-                            <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-                          </svg>
-                          Members only
-                        </p>
-                        <div className="text-gray-900 font-bold text-xl mb-2">
-                          Best Mountain Trails 2020
-                        </div>
-                        <p className="text-gray-700 text-base">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Voluptatibus quia, Nonea! Maiores et perferendis
-                          eaque, exercitationem praesentium nihil.
-                        </p>
-                      </div>
-                      <div className="flex items-center">
-                        <img
-                          className="w-10 h-10 rounded-full mr-4"
-                          src="/ben.png"
-                          alt="Avatar of Writer"
-                        />
-                        <div className="text-sm">
-                          <p className="text-gray-900 leading-none">
-                            John Smith
-                          </p>
-                          <p className="text-gray-600">Aug 18</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <button className="border-2 boarder-gray-200 rounded-3xl px-4 py-2 ml-50 mt-20 text-gray-600 justify-center sm:mb-5">
+                  Load More
+                </button>
               </div>
             </div>
           </section>

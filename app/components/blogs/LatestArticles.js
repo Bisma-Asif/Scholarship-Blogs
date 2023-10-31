@@ -44,12 +44,12 @@ const data = [
 function LatestArticles() {
   return (
     <>
-      <div className="flex lg:flex-nowrap  mx-20 my-20 sm:flex-wrap md:mx-2 my-2">
-        <div className="w-4/5 ml-10">
+      <div className="flex lg:flex-row  mx-20 my-20 sm:flex-col md:mx-2 my-2">
+        <div className="w-4/5 ml-10 sm:ml-5">
           <h1 className="text-3xl font-bold ">Latest Articals</h1>
           <hr />
-          <div className="flex flex-col mt-10">
-            <div className="max-w-4xl">
+          <div className="flex flex-col mt-10 ">
+            <div className="max-w-4xl ">
               {data.map((card, index) => (
                 <div
                   key={index}
@@ -104,7 +104,7 @@ function LatestArticles() {
             Load More
           </button>
         </div>
-        <div className="lg:w-2/4 sm:w-9/12 ">
+        <div className="lg:w-2/4 sm:w-4/6 ">
           <h1 className="text-3xl font-bold pl-10">Most Popular Videos</h1>
           <hr />
           <div className=" border-gray-200 border-2 rounded-lg mx-10 mt-10 shadow-lg">

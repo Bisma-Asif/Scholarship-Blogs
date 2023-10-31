@@ -39,7 +39,7 @@ function BlogTabs() {
 
   return (
     <div className="">
-      <div className="flex lg:ml-20 mt-20 lg:space-x-5 border-b  lg:text-base sm:text-xs sm:space-x-2 sm:mt-5 mx-5 ">
+      <div className="flex lg:ml-20 mt-20 lg:space-x-5 border-b  lg:text-base sm:text-xs sm:space-x-2 sm:mt-5 mx-5 md:w-1/5 sm:w-screen">
         {/* Loop through tab data and render button for each. */}
         {tabsData.map((tab, idx) => {
           return (
@@ -58,9 +58,7 @@ function BlogTabs() {
           );
         })}
       </div>
-      <div className="text-gray-700 md:items-center">
-        {tabsData[activeTabIndex].content}
-      </div>
+      <div className="text-gray-700 ">{tabsData[activeTabIndex].content}</div>
     </div>
   );
 }

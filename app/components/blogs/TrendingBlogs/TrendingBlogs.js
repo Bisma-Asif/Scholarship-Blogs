@@ -28,7 +28,7 @@ const tabsData = [
     content:
       "Fugiat dolor et quis in incididunt aute. Ullamco voluptate consectetur dolor officia sunt est dolor sint.",
   },
-  
+
   {
     label: "Engineering ",
     content:
@@ -65,7 +65,7 @@ function BlogTabs() {
         })}
       </div>
       {/* Show active tab content. */}
-      <div className="w-11/12 sm:9/12">
+      <div className="w-11/12 ">
         {/* <p>{tabsData[activeTabIndex].content}</p> */}
         <TrendingCard />
       </div>

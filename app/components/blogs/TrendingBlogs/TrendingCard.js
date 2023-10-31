@@ -48,7 +48,7 @@ function TrendingCard() {
   return (
     <>
       <div>
-        <div className="p-10 lg:w-full gap-x-2  lg:ml-20 flex  lg:flex-nowrap sm:flex-wrap sm:ml-5 sm:gap-y-2 sm:w-10/12">
+        <div className="p-10 lg:w-full gap-x-2  lg:ml-20 flex  lg:flex-row md:flex-col md:ml-5 sm:gap-y-2 md:w-3/4">
           {cards.map((card, index) => (
             <div key={index} className="rounded overflow-hidden shadow-lg ">
               <img className="w-full" src={card.imageSrc} alt={card.title} />
@@ -60,7 +60,7 @@ function TrendingCard() {
             </div>
           ))}
         </div>
-        <div className="container max-w-5xl flex flex-wrap flex-col lg:ml-20 md:flex-row sm:mx-5 sm:w-10/12 ">
+        <div className=" max-w-5xl flex flex-wrap flex-col lg:ml-20 md:flex-row sm:mx-5  ">
           {cardsData.map((card, index) => (
             <div
               key={index}

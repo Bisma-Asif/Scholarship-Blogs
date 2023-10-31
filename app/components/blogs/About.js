@@ -4,9 +4,9 @@ function About() {
   return (
     <>
       <div>
-        <div className="mt-10 boarder-l-2 lg:ml-20 sm:mx-8">
+        <div className="mt-10 boarder-l-2  ">
           <h1 className="text-3xl font-bold px-20">About World</h1>
-          <hr />
+          <hr className="md:mx-8" />
           <div className="px-10">
             <p className="py-10">
               react tailwind css card with image It is a long established fact
@@ -17,15 +17,17 @@ function About() {
               will be distracted by the readable content
             </p>
           </div>
-          <hr />
+          <hr className="md:mx-8" />
           <div className="">
             <h1 className="text-2xl font-bold px-20 py-2">Top Stories</h1>
-            <hr />
+            <hr className="md:mx-8" />
             <AboutCard />
           </div>
-          <hr />
-          <h1 className="text-3xl font-bold px-20 py-5">Stay Connected</h1>
-          <hr />
+          <hr className="md:mx-8" />
+          <h1 className="text-3xl font-bold px-20 py-5 md:px-10 ">
+            Stay Connected
+          </h1>
+          <hr className="md:mx-8" />
           <div>
             <ul className="flex justify-between px-10 py-10">
               <li>
@@ -90,10 +92,10 @@ function About() {
               </li>
             </ul>
           </div>
-          <hr />
+          <hr className="md:mx-8" />
           <h1 className="text-3xl font-bold px-20 py-5">Today's Pick</h1>
-          <hr />
-          <div className="px-10 py-10">
+          <hr className="md:mx-8" />
+          <div className="px-10 py-10 md:px-4">
             <img
               src="https://img.freepik.com/free-photo/young-students-learning-together-during-group-study_23-2149211066.jpg"
               alt=""

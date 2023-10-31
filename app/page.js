@@ -12,10 +12,13 @@ export default function Home() {
   return (
     <>
       <div>
-        <Blog />
+        {/* <Header />
+        <Card /> */}
+        {/* <Blog /> */}
+        <BlogPage />
       </div>
       {/* <Header />
-      <Card />
+      
       <Footer />
       <SignIn />
       <SignUp /> */}

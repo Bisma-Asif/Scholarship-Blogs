@@ -50,10 +50,10 @@ function BlogCarousel() {
       data-te-carousel-init=""
       data-te-ride="carousel"
     >
-      <div className="w-full ml-20 mt-5 h-3/5 overflow-hidden after:clear-both after:block after:content-['']">
+      <div className="relative w-full lg:ml-20 mt-5 h-3/5 overflow-hidden after:clear-both after:block after:content-[''] md:mx-6 ">
         <Slider {...settings}>
           {posts.map((items, key) => (
-            <div className="w-full shadow-md lg:max-w-sm mb-5 " key={key}>
+            <div className="w-full shadow-md lg:max-w-sm mb-5  " key={key}>
               <img
                 className="object-cover w-full h-52"
                 src={items.img}

@@ -22,7 +22,7 @@ function SideBlogsCards() {
 
   return (
     <>
-      <div className=" flex-col md:flex-row ">
+      <div className=" flex-col md:flex-row md:mx-5">
         {cardsData.map((card, index) => (
           <div className="w-full lg:w-11/12 p-3" key={index}>
             <div className="flex flex-col lg:flex-row rounded overflow-hidden h-auto lg:h-32 border shadow shadow-lg">
