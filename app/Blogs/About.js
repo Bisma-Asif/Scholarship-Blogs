@@ -4,11 +4,13 @@ function About() {
   return (
     <>
       <div>
-        <div className="mt-10 boarder-l-2  ">
-          <h1 className="text-3xl font-bold px-20">About World</h1>
-          <hr className="md:mx-8" />
-          <div className="px-10">
-            <p className="py-10">
+        <div className="mt-10 boarder-l-2 mx-10 ">
+          <h1 className="text-3xl font-bold px-10 lg:px-20 py-5">
+            About World
+          </h1>
+          <hr className="" />
+          <div className="">
+            <p className="">
               react tailwind css card with image It is a long established fact
               that a reader will be distracted by the readable content react
               tailwind css card with image It is a long established fact that a
@@ -17,19 +19,22 @@ function About() {
               will be distracted by the readable content
             </p>
           </div>
-          <hr className="md:mx-8" />
+          <hr className="" />
           <div className="">
-            <h1 className="text-2xl font-bold px-20 py-2">Top Stories</h1>
-            <hr className="md:mx-8" />
+            <h1 className="text-3xl font-bold px-10 lg:px-20 py-2">
+              Top Stories
+            </h1>
+            <hr className="" />
             <AboutCard />
           </div>
-          <hr className="md:mx-8" />
-          <h1 className="text-3xl font-bold px-20 py-5 md:px-10 ">
+          <hr className="mt-5" />
+
+          <h1 className="text-3xl font-bold px-5 lg:px-20 py-5 md:px-10 ">
             Stay Connected
           </h1>
-          <hr className="md:mx-8" />
+          <hr className="" />
           <div>
-            <ul className="flex justify-between px-10 py-10">
+            <ul className="flex justify-between px-10 py-5 lg:py-10 ">
               <li>
                 <svg
                   viewBox="0 0 500 1000"
@@ -92,16 +97,18 @@ function About() {
               </li>
             </ul>
           </div>
-          <hr className="md:mx-8" />
-          <h1 className="text-3xl font-bold px-20 py-5">Today's Pick</h1>
-          <hr className="md:mx-8" />
-          <div className="px-10 py-10 md:px-4">
+          <hr className="" />
+          <h1 className="text-3xl font-bold px-10 lg:px-20 py-5 ">
+            Today's Pick
+          </h1>
+          <hr className="" />
+          <div className=" py-10 md:px-4">
             <img
               src="https://img.freepik.com/free-photo/young-students-learning-together-during-group-study_23-2149211066.jpg"
               alt=""
               className="thumbnail  w-full sm:px-5 "
             />
-            <h1 className="px-10 py-10 text-2xl font-bold ">
+            <h1 className=" py-10 text-2xl font-bold ">
               react tailwind css card with image It is a long established fact
               that a reader will be distracted .
             </h1>

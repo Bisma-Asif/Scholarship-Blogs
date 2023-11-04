@@ -1,36 +1,32 @@
 "use client";
 import { useState } from "react";
-import BlogContent from "./BlogContent";
+import TrendingCard from "./TrendingCard";
 
 const tabsData = [
   {
     label: "All",
-    content: <BlogContent />,
+    content: <TrendingCard />,
   },
   {
     label: "Argriculture",
-    content: <BlogContent />,
+    content: <TrendingCard />,
   },
   {
     label: "Mathematics",
-    content: <BlogContent />,
+    content: <TrendingCard />,
   },
   {
     label: "Computer",
-    content: <BlogContent />,
+    content: <TrendingCard />,
   },
   {
     label: "Business",
-    content: <BlogContent />,
+    content: <TrendingCard />,
   },
 
   {
-    label: "Engineering ",
-    content: <BlogContent />,
-  },
-  {
     label: "More",
-    content: <BlogContent />,
+    content: <TrendingCard />,
   },
 ];
 
@@ -39,7 +35,7 @@ function BlogTabs() {
 
   return (
     <div className="">
-      <div className="flex lg:ml-20 mt-20 lg:space-x-5 border-b  lg:text-base sm:text-xs sm:space-x-2 sm:mt-5 mx-5 md:w-1/5 sm:w-screen">
+      <div className="flex text-xs space-x-2 ml-2 mt-20 lg:space-x-5 md:space-x-4 border-b  lg:text-base md:text-2xl md:mx-10">
         {/* Loop through tab data and render button for each. */}
         {tabsData.map((tab, idx) => {
           return (

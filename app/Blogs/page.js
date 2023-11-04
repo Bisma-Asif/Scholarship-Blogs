@@ -4,17 +4,18 @@ import About from "./About";
 import TrendingBlogs from "./TrendingBlogs/TrendingBlogs";
 import BlogAdd from "./BlogAdd";
 import LatestArticles from "./LatestArticles";
+import style from "./blog.css";
 
-function Blog() {
+function Blogs() {
   return (
     <>
       <div>
-        <div className="grid lg:grid-cols-3 space-x-2 sm:grid-cols-1">
-          <div className="w-full col-span-2 ">
+        <div className="m-auto grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 lg:mx-20 ">
+          <div className="lg:mr-40 lg:col-span-2 ">
             <BlogTabs />
             <TrendingBlogs />
           </div>
-          <div className="w-4/5">
+          <div className="md:mx-20 lg:mx-4 ">
             <About />
           </div>
         </div>
@@ -26,4 +27,4 @@ function Blog() {
   );
 }
 
-export default Blog;
+export default Blogs;

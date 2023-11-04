@@ -1,10 +1,11 @@
 import BlogCarousel from "./BlogCarousel";
 import SideBlogsCards from "./SideBlogsCards";
+import style from "./blog.css";
 function BlogContent() {
   return (
     <>
-      <div className="grid lg:grid-cols-2 sm:grid-cols-1">
-        <div className="lg:w-96 mr-10 sm:w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 md:grid-cols-2">
+        <div className="">
           <BlogCarousel />
         </div>
         <div className="">

@@ -44,12 +44,14 @@ const data = [
 function LatestArticles() {
   return (
     <>
-      <div className="flex lg:flex-row  mx-20 my-20 sm:flex-col md:mx-2 my-2">
-        <div className="w-4/5 ml-10 sm:ml-5">
-          <h1 className="text-3xl font-bold ">Latest Articals</h1>
+      <div className="flex  flex-col lg:flex-row  lg:mx-20 my-20  md:mx-2 my-2">
+        <div className="w-full lg:w-4/5 lg:ml-10  ">
+          <h1 className="text-3xl font-bold  md:p-10 md:text-4xl">
+            Latest Articals
+          </h1>
           <hr />
           <div className="flex flex-col mt-10 ">
-            <div className="max-w-4xl ">
+            <div className="max-w-5xl ">
               {data.map((card, index) => (
                 <div
                   key={index}
@@ -100,12 +102,14 @@ function LatestArticles() {
               ))}
             </div>
           </div>
-          <button className="border-2 boarder-gray-200 rounded-3xl px-4 py-2 mr-10 mt-20 text-gray-600 lg:float-right sm:float-left sm:mb-5">
+          <button className="border-2 boarder-gray-200 rounded-3xl mx-28 mb-5 px-4 py-2 mr-10 mt-20 text-gray-600 lg:float-right md:mx-64 md:mb-10">
             Load More
           </button>
         </div>
-        <div className="lg:w-2/4 sm:w-4/6 ">
-          <h1 className="text-3xl font-bold pl-10">Most Popular Videos</h1>
+        <div className="lg:w-2/4 w-full">
+          <h1 className="text-3xl font-bold pl-10 md:p-10 md:text-4xl">
+            Most Popular Videos
+          </h1>
           <hr />
           <div className=" border-gray-200 border-2 rounded-lg mx-10 mt-10 shadow-lg">
             <img

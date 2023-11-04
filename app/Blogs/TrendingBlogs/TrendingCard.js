@@ -22,33 +22,31 @@ function TrendingCard() {
 
   const cardsData = [
     {
-      imageSrc: "https://pbs.twimg.com/media/DrM0nIdU0AEhG5b.jpg",
-      title: "Can life make you a bitter developer?",
-      description: "Read more",
-    },
-    {
+      title: "Yet another card title",
       imageSrc:
         "https://images.pexels.com/photos/1302883/pexels-photo-1302883.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
-      title: "Can coffee make you a bitter developer?",
-      description: "Read more",
     },
     {
-      imageSrc: "https://pbs.twimg.com/media/DrM0nIdU0AEhG5b.jpg",
-      title: "Can coffee make you a bitter developer?",
-      description: "Read more",
-    },
-    {
+      title: "Yet another card title",
       imageSrc:
         "https://images.pexels.com/photos/1302883/pexels-photo-1302883.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
-      title: "Can coffee make you a bitter developer?",
-      description: "Read more",
+    },
+    {
+      title: "Yet another card title",
+      imageSrc:
+        "https://images.pexels.com/photos/1302883/pexels-photo-1302883.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+    },
+    {
+      title: "Yet another card title",
+      imageSrc:
+        "https://images.pexels.com/photos/1302883/pexels-photo-1302883.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
     },
   ];
 
   return (
     <>
-      <div>
-        <div className="p-10 lg:w-full gap-x-2  lg:ml-20 flex  lg:flex-row md:flex-col md:ml-5 sm:gap-y-2 md:w-3/4">
+      <div className="mx-5 my-4 md:mx-5">
+        <div className="flex-col lg:flex-row md:flex-row w-full gap-x-2  flex gap-y-4">
           {cards.map((card, index) => (
             <div key={index} className="rounded overflow-hidden shadow-lg ">
               <img className="w-full" src={card.imageSrc} alt={card.title} />
@@ -60,17 +58,18 @@ function TrendingCard() {
             </div>
           ))}
         </div>
-        <div className=" max-w-5xl flex flex-wrap flex-col lg:ml-20 md:flex-row sm:mx-5  ">
+
+        <div className=" max-w-6xl flex flex-col flex-wrap lg:flex-row md:flex-row   mt-10  ">
           {cardsData.map((card, index) => (
             <div
               key={index}
-              className={`w-full lg:w-1/2 p-3 ${
-                index % 2 === 0 ? "" : "lg:flex-row-reverse"
+              className={`lg:w-1/2 w-full   ${
+                index % 2 === 0 ? "" : "flex-row-reverse"
               }`}
             >
-              <div className="flex flex-col lg:flex-row rounded overflow-hidden h-auto lg:h-32 border shadow shadow-lg">
+              <div className="flex flex-row rounded overflow-hidden h-auto lg:h-28 border shadow shadow-lg">
                 <img
-                  className="block h-auto w-full lg:w-48 flex-none bg-cover h-24"
+                  className="block h-auto lg:w-48 w-32  flex-none bg-cover h-24"
                   src={card.imageSrc}
                   alt={card.title}
                 />

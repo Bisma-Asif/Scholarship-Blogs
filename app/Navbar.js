@@ -12,7 +12,6 @@ const navigation = [
   { name: "Home", href: "#", current: true },
   { name: "Blogs", href: "", current: false },
   { name: "Scholarship", href: "#", current: false },
-  { name: "About", href: "#", current: false },
   { name: "Contact", href: "#", current: false },
 ];
 
@@ -65,7 +64,7 @@ function Navbar() {
                           href={item.href}
                           onClick={
                             item.name === "Blogs"
-                              ? () => router.push("/blogs")
+                              ? () => router.push("/Blogs")
                               : undefined
                           }
                           className={classNames(
