@@ -29,19 +29,19 @@ function SignIn({ visible, onClose }) {
           >
             X
           </button>
-          <div className="container ">
+          <div className=" ">
             <div className="flex ">
               {/* Row */}
               <div className="w-full xl:w-3/4 lg:w-full flex">
                 {/* Col */}
-                <div className="w-full h-auto bg-blue-900 hidden lg:block lg:w-full bg-cover rounded-l-lg">
+                <div className="w-full  bg-blue-900 hidden lg:block lg:w-full bg-cover rounded-l-lg">
                   <p className="text-center py-28 font-bold text-3xl pb-6">
                     <span className="text-white-600">LOGO</span>
                   </p>
                   <img
                     src="https://img.freepik.com/free-photo/young-students-learning-together-during-group-study_23-2149211066.jpg"
                     alt=""
-                    className="thumbnail w-full h-3/5 mt-24 rounded-3xl"
+                    className="thumbnail w-full h-3/5 mt-20 rounded-3xl"
                   />
                 </div>
 
@@ -60,22 +60,22 @@ function SignIn({ visible, onClose }) {
                         Email
                       </label>
                       <input
-                        className="w-full px-5 py-5 mb-3 text-lg leading-tight text-gray-700 border rounded-xl shadow appearance-none focus:outline-none focus:shadow-outline"
+                        className="w-1/5 px-5 py-5 mb-3 text-lg leading-tight text-gray-700 border rounded-xl shadow appearance-none focus:outline-none focus:shadow-outline"
                         id="email"
                         type="email"
                         placeholder="Email"
                       />
                     </div>
-                    <div className="mb-4 md:flex md:justify-between"></div>
+                    <div className="mb-4 mt-10 md:flex md:justify-between"></div>
                     <div className="mb-4 md:mr-2 md:mb-0">
                       <label
-                        className="block mb-2 text-lg font-bold text-gray-700"
+                        className="block mb-2 mt-16 text-lg font-bold text-gray-700"
                         htmlFor="password"
                       >
                         Password
                       </label>
                       <input
-                        className="w-full px-5 py-5 mb-3 text-lg leading-tight text-gray-700 border border-red-500 rounded-xl shadow appearance-none focus:outline-none focus:shadow-outline"
+                        className="w-1/5 px-5 py-5 mb-3 text-lg leading-tight text-gray-700 border border-red-500 rounded-xl shadow appearance-none focus:outline-none focus:shadow-outline"
                         id="password"
                         type="password"
                         placeholder="Enter password"
@@ -84,7 +84,7 @@ function SignIn({ visible, onClose }) {
 
                     <div className="mb-6 text-center">
                       <button
-                        className="w-2/4 mt-10   text-2xl font-bold text-white bg-blue-900 rounded-2xl hover:bg-blue-700 focus:outline-none focus:shadow-outline lg:px-4 py-3.5 md:px-6"
+                        className="w-2/4 mt-24   text-2xl font-bold text-white bg-blue-900 rounded-2xl hover:bg-blue-700 focus:outline-none focus:shadow-outline lg:px-4 py-3.5 md:px-6"
                         type="button"
                       >
                         Sign Up

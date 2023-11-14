@@ -11,7 +11,7 @@ function Blogs() {
     <>
       <div>
         <div className="m-auto grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 lg:mx-20 ">
-          <div className="lg:mr-40 lg:col-span-2 ">
+          <div className="lg:mr-20 lg:col-span-2 ">
             <BlogTabs />
             <TrendingBlogs />
           </div>

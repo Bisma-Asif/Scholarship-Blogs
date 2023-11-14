@@ -31,12 +31,12 @@ function Card() {
       <Slider />
 
       {/* Card 2 start */}
-      <div className="  mb-20 lg:px-40 ">
+      <div className="  mb-20 lg:px-10 ">
         <section className="justify-center">
           {" "}
           {/* Corrected 'secction' to 'section' */}
           <div className="grid  gap-y-4 lg:grid-cols-2 lg:gap-x-2.5 justify-center sm:grid-cols-1 sm:gap-x-1">
-            <div className="lg:w-9/12  pt-10 text-center  sm:px-2">
+            <div className="w-full  pt-10 text-center  sm:px-2">
               <h2 className="font-sans text-gray-700 lg:text-6xl md:text-3xl  ">
                 Find scholarships
               </h2>
@@ -85,7 +85,7 @@ function Card() {
           
           Card 3 start */}
 
-      <div className="  mb-20 lg:px-40 ">
+      <div className="  mb-20 lg:px-10 ">
         <section className="justify-center">
           {" "}
           {/* Corrected 'secction' to 'section' */}
@@ -95,7 +95,7 @@ function Card() {
               alt=""
               className="thumbnail rounded-3xl w-full sm:px-5 "
             />
-            <div className="lg:w-9/12  pt-10 text-center  sm:px-2">
+            <div className="w-full  pt-10 text-center  sm:px-2">
               <h2 className="font-sans text-gray-700 lg:text-6xl md:text-3xl  ">
                 Find scholarships
               </h2>

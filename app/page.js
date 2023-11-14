@@ -1,4 +1,3 @@
-import BlogPage from "./Blogs/BlogPage";
 import Card from "./Card";
 import Main from "./Main";
 
@@ -7,10 +6,10 @@ export default function Home() {
     <>
       <div>
         {/* <Header /> */}
-        {/* <Main /> */}
+        <Main />
         {/* <Card /> */}
         {/* <Blog /> */}
-        <BlogPage />
+        {/* <BlogPage /> */}
       </div>
       {/* <Header />
       

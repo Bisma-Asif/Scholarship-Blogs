@@ -9,12 +9,26 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const navigation = [
-  { name: "Home", href: "#", current: true },
-  { name: "Blogs", href: "", current: false },
-  { name: "Scholarship", href: "#", current: false },
+  { name: "Home", href: "/", current: true },
+  { name: "Blogs", href: "/Blogs", current: false },
+  { name: "Scholarship", href: "/Scholarship", current: false },
   { name: "Contact", href: "#", current: false },
 ];
-
+const handleLinkClick = (name, href) => {
+  if (name === "Blogs") {
+    
+    router.push("/Blogs");
+  } else if (name === "Home") {
+   
+    router.push("/");
+  } else if (name === "Scholarship") {
+    
+    router.push("/Scholarship");
+  } else {
+    
+    router.push(href);
+  }
+};
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -59,14 +73,15 @@ function Navbar() {
                   <div className="hidden sm:ml-6 sm:block">
                     <div className="flex space-x-6 ">
                       {navigation.map((item) => (
-                        <a
+                        <Link
                           key={item.name}
                           href={item.href}
                           onClick={
-                            item.name === "Blogs"
-                              ? () => router.push("/Blogs")
-                              : undefined
-                          }
+                            () => handleLinkClick(item.name, item.href)}
+                            // item.name === "Blogs"
+                            //   ? () => router.push("/Blogs")
+                            //   : undefined
+                          
                           className={classNames(
                             item.current ? "text-white" : "text-white",
                             "rounded-md px-3 py-2 text-lg font-medium"
@@ -74,7 +89,7 @@ function Navbar() {
                           aria-current={item.current ? "page" : undefined}
                         >
                           {item.name}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </div>

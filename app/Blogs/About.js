@@ -4,8 +4,8 @@ function About() {
   return (
     <>
       <div>
-        <div className="mt-10 boarder-l-2 mx-10 ">
-          <h1 className="text-3xl font-bold px-10 lg:px-20 py-5">
+        <div className="mt-10 boarder-l-2  ">
+          <h1 className="text-3xl font-bold px-10 lg:px-10 py-5">
             About World
           </h1>
           <hr className="" />
@@ -29,7 +29,7 @@ function About() {
           </div>
           <hr className="mt-5" />
 
-          <h1 className="text-3xl font-bold px-5 lg:px-20 py-5 md:px-10 ">
+          <h1 className="text-3xl font-bold px-5 lg:px-10 py-5 md:px-10 ">
             Stay Connected
           </h1>
           <hr className="" />

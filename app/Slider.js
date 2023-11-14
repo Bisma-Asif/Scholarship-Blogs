@@ -33,11 +33,11 @@ function Slider({ showModal, showSignInModal }) {
       <swiper-container
         ref={swiperRef}
         init="false"
-        className="relative"
+        className="relative w-4"
         style={{ zIndex: (showModal || showSignInModal) && "-1" }}
       >
-        <swiper-slide class="relative">
-          <div className="  mb-20 lg:px-40 ">
+        <swiper-slide class="relative lg:px-20">
+          <div className="  mb-20  ">
             <section className="justify-center">
               {" "}
               {/* Corrected 'secction' to 'section' */}
@@ -69,11 +69,11 @@ function Slider({ showModal, showSignInModal }) {
                   alt=""
                   className="thumbnail w-full rounded-2xl sm:px-5 "
                 /> */}
-                <div className="lg:w-9/12  pt-40 text-center sm:px-2">
+                <div className="w-full  pt-40 text-center sm:px-2">
                   <h2 className="font-sans text-gray-700 lg:text-6xl md:text-3xl  ">
                     Find scholarships
                   </h2>
-                  <p className="pt-4   font-sans mt-5 lg:text-2xl px-20 ">
+                  <p className="pt-4   font-sans mt-5 lg:text-2xl  px-10">
                     Find and compare University Scholarships Worldwide. Get a
                     collections of suitable scholarships from our expansive
                     scholarship database.
@@ -89,8 +89,8 @@ function Slider({ showModal, showSignInModal }) {
             </section>
           </div>
         </swiper-slide>
-        <swiper-slide class="relative z-0">
-          <div className="  mb-20 lg:px-40 ">
+        <swiper-slide class="relative z-0 lg:px-20">
+          <div className="  mb-20  ">
             <section className="justify-center">
               {" "}
               {/* Corrected 'secction' to 'section' */}
@@ -122,11 +122,11 @@ function Slider({ showModal, showSignInModal }) {
                   alt=""
                   className="thumbnail rounded-3xl w-full sm:px-5 "
                 /> */}
-                <div className="lg:w-9/12  pt-40 text-center  sm:px-2">
+                <div className="w-full pt-40 text-center  sm:px-2">
                   <h2 className="font-sans text-gray-700 lg:text-6xl  ">
                     Find scholarships
                   </h2>
-                  <p className="pt-4   font-sans mt-5 lg:text-2xl px-20 ">
+                  <p className="pt-4   font-sans mt-5 lg:text-2xl px-10 ">
                     Find and compare University Scholarships Worldwide. Get a
                     collections of suitable scholarships from our expansive
                     scholarship database.
@@ -142,8 +142,8 @@ function Slider({ showModal, showSignInModal }) {
             </section>
           </div>
         </swiper-slide>
-        <swiper-slide class="relative z-0">
-          <div className="  mb-20 lg:px-40 ">
+        <swiper-slide class="relative z-0 lg:px-20">
+          <div className="  mb-20 ">
             <section className="justify-center">
               {" "}
               {/* Corrected 'secction' to 'section' */}
@@ -175,11 +175,11 @@ function Slider({ showModal, showSignInModal }) {
                   alt=""
                   className="thumbnail rounded-3xl w-full sm:px-5 "
                 /> */}
-                <div className="lg:w-9/12  pt-40 text-center  sm:px-2">
+                <div className="w-full  pt-40 text-center  sm:px-2">
                   <h2 className="font-sans text-gray-700 lg:text-6xl  ">
                     Find scholarships
                   </h2>
-                  <p className="pt-4   font-sans mt-5 lg:text-2xl px-20 ">
+                  <p className="pt-4   font-sans mt-5 lg:text-2xl px-10 ">
                     Find and compare University Scholarships Worldwide. Get a
                     collections of suitable scholarships from our expansive
                     scholarship database.
