@@ -398,6 +398,21 @@ function classNames(...classes) {
 }
 
 export default function Example() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/api/products"); // Assuming your API route is /api/products
+        const result = await response.json();
+        setData(result.BlogData); // Adjust the property based on your API response structure
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [query, setQuery] = useState("");
